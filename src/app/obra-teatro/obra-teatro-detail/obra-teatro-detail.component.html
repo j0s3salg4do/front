@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ obraDetail.titulo }}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Género</dt>
+        <dd>{{ obraDetail.genero }}</dd>
+        <dt>Duración</dt>
+        <dd>{{ obraDetail.duracion }}</dd>
+        <hr />
+        <dt>Sinopsis</dt>
+        <dd>{{ obraDetail.sinopsis }}</dd>
+        <hr />
+        <dt>Elenco</dt>
+        <dd>{{ obraDetail.elenco }}</dd>
+        <hr />
+        <dt>Reseñas</dt>
+        <ul *ngIf="obraDetail.resenas.length > 0; else noResenas" class="list-group mb-3">
+          <li *ngFor="let resena of obraDetail.resenas" class="list-group-item">
+            <strong>Calificación: {{ resena.calificacion }} ⭐</strong>
+            <p><em>{{ resena.comentario }}</em></p>
+          </li>
+        </ul>
+        <ng-template #noResenas>
+          <p class="text-muted">No hay reseñas para esta obra.</p>
+        </ng-template>
+        <hr />
+      </dl>
+    </div>
+  </div>
+</div>

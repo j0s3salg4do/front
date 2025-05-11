@@ -1,0 +1,30 @@
+
+.teatro-card {
+  background-color: #d63321; 
+  color: white;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.teatro-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.selected {
+  border: 2px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+.text-muted {
+  color: #f8d7da !important; 
+  font-style: italic;
+}

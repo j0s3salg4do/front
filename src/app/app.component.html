@@ -1,0 +1,43 @@
+<div class="main-container">
+  <header class="header">
+    <div class="header-content">
+      <h1>Butaca Perfecta</h1>
+      <nav class="nav-buttons">
+        <button class="nav-btn" routerLink="/">Inicio</button>
+        <button class="nav-btn" routerLink="/teatros">Teatros</button>
+        <button class="nav-btn" routerLink="/obras">Obras</button>
+        <button class="nav-btn" routerLink="/funciones">Funciones</button>
+        <button class="nav-btn" routerLink="/resenas">Reseñas</button>
+      </nav>
+    </div>
+  </header>
+
+  <div *ngIf="router.url === '/'">
+    <section class="featured-section">
+      <h2>Obras de Teatro</h2>
+      <div *ngIf="obras.length === 0">
+        <p class="loading-text">Cargando obras de teatro del servidor ...</p>
+      </div>
+      <div class="card-container">
+        <div class="card" *ngFor="let obra of obras">
+          <img class="card-img-top" [src]="obra.imagen" [alt]="obra.titulo"/>
+          <div class="card-body">
+            <h5 class="card-title">{{ obra.titulo }}</h5>
+            <p class="card-text">{{ obra.sinopsis }}</p>
+            <button class="btn btn-danger" (click)="toggleObra(obra.id)">
+              {{ isExpanded(obra.id) ? 'Ocultar detalles' : 'Ver detalles' }}
+            </button>
+            <div *ngIf="isExpanded(obra.id)" class="card-details">
+              <p><strong>Género: </strong>{{ obra.genero }}</p>
+              <p><strong>Duración: </strong>{{ obra.duracion }}</p>
+              <p><strong>Elenco: </strong>{{ obra.elenco }}</p>
+              <p><strong>Sinopsis:</strong>{{ obra.sinopsis }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

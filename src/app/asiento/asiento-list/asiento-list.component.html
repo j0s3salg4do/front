@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="screen"></div>
+
+  <div *ngIf="asientosPorFila.length > 0">
+    <div class="row" *ngFor="let fila of asientosPorFila">
+      <div *ngFor="let asiento of fila" 
+        class="seat" 
+        [ngClass]="{'occupied': !asiento.disponible}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="text">
+  Total de asientos: {{ asientos.length }}
+</p>
+
+<a routerLink="/asientos/detalle">Ir a selección</a>

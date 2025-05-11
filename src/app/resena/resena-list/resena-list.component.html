@@ -1,0 +1,23 @@
+<div class="container mt-4 resenas-container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="resenas-title">Reseñas</h2>
+
+      <div *ngIf="resenas && resenas.length === 0">
+        No hay reseñas disponibles.
+      </div>
+
+      <div *ngFor="let resena of resenas" class="card resena-card mb-4">
+        <div class="card-body">
+          <h5 class="card-title calificacion">
+            Calificación: {{ resena.calificacion }} ⭐
+          </h5>
+          <p class="card-text"><strong>Comentario:</strong> <em>{{ resena.comentario }}</em></p>
+          <p *ngIf="resena.cliente"><strong>Cliente:</strong> {{ resena.cliente.nombreUsuario }}</p>
+          <p *ngIf="resena.obraDeTeatro"><strong>Obra:</strong> {{ resena.obraDeTeatro.titulo }}</p>
+          <p *ngIf="resena.teatro"><strong>Teatro:</strong> {{ resena.teatro.nombreTeatro }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

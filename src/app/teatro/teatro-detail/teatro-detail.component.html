@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ teatroDetail.nombreTeatro }}</p>
+  <div class="text-center mb-3" [ngSwitch]="teatroDetail.nombreTeatro">
+    <a *ngSwitchCase="'Teatro Colón'" href="https://bogota.gov.co/sites/default/files/2025-02/panoramica-sala-colon-prensa-cna-1.jpg" target="_blank">
+      <img src="https://bogota.gov.co/sites/default/files/2025-02/panoramica-sala-colon-prensa-cna-1.jpg" alt="Teatro Colón" class="img-fluid rounded shadow-sm" style="max-height: 250px;">
+    </a>
+  
+    <a *ngSwitchCase="'Teatro Metropolitano José Gutiérrez Gómez'" href="https://api2.teatrometropolitano.com/storage/371/conversions/eAf5n6sjLw289TOA3N11-thumb.jpg" target="_blank">
+      <img src="https://api2.teatrometropolitano.com/storage/371/conversions/eAf5n6sjLw289TOA3N11-thumb.jpg" alt="Teatro Pablo Tobón Uribe" class="img-fluid rounded shadow-sm" style="max-height: 250px;">
+    </a>
+  
+    <a *ngSwitchCase="'Teatro Jorge Eliécer Gaitán'" href="https://acustical.com/wp-content/uploads/2017/04/jorge-eliecer-gaitan.jpg" target="_blank">
+      <img src="https://acustical.com/wp-content/uploads/2017/04/jorge-eliecer-gaitan.jpg" alt="Teatro Jorge Eliécer Gaitán" class="img-fluid rounded shadow-sm" style="max-height: 250px;">
+    </a>
+
+    <a *ngSwitchCase="'Teatro Pablo Tobón Uribe'" href="https://www.kaira.com.co/wp-content/uploads/listing-uploads/gallery/2024/05/descarga-2.jpeg" target="_blank">
+      <img src="https://www.kaira.com.co/wp-content/uploads/listing-uploads/gallery/2024/05/descarga-2.jpeg" alt="Teatro Jorge Eliécer Gaitán" class="img-fluid rounded shadow-sm" style="max-height: 250px;">
+    </a>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>Dirección</dt>
+        <dd>{{ teatroDetail.direccionTeatro }}</dd>
+        <dt>Capacidad</dt>
+        <dd>{{ teatroDetail.capacidad }}</dd>
+      </dl>
+      <hr />
+    </div>
+  </div>
+</div>

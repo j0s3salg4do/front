@@ -1,0 +1,33 @@
+.resenas-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 2rem;
+}
+
+.resenas-title {
+  color: #800000;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.resena-card {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.resena-card:hover {
+  transform: scale(1.02);
+}
+
+.calificacion {
+  font-weight: bold;
+  color: #800000;
+  font-size: 1.1rem;
+}
+
+.card-text {
+  color: #444;
+  font-size: 0.95rem;
+}

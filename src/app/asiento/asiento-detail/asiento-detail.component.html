@@ -1,0 +1,20 @@
+<h2>Selecciona tus asientos</h2>
+
+<div class="grilla-asientos">
+  <div *ngFor="let asiento of asientos"
+       class="asiento"
+       [class.ocupado]="!asiento.disponible"
+       [class.seleccionado]="estaSeleccionado(asiento)"
+       (click)="seleccionarAsiento(asiento)">
+    {{ asiento.numero }}
+  </div>
+</div>
+
+<h3>Asientos seleccionados:</h3>
+<ul>
+  <li *ngFor="let a of asientosSeleccionados">{{ a.numero }}</li>
+</ul>
+
+<button (click)="confirmarCompra()" [disabled]="asientosSeleccionados.length === 0">
+  Confirmar Compra
+</button>
